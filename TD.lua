@@ -583,8 +583,8 @@ function Doing(data, Ads_id)
             end, nil))
           elseif text:match("^([Rr]eload)$") then
             return reload(msg.chat_id, msg.id)
-            elseif text:match("^([Aa]ddedmsg) (.*)$") then
-            local matches = text:match("([Aa]ddedmsg) (.*)$")
+            elseif text:match("^([Aa]ddmsg) (.*)$") then
+            local matches = text:match("([Aa]ddmsg) (.*)$")
             if matches == "on" then
               redis:set("tg:" .. Ads_id .. ":addmsg", true)
               return send(msg.chat_id, msg.id, "Activate")
